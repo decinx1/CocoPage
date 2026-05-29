@@ -1,0 +1,15 @@
+Coloca aquí las imágenes y videos de Coco.
+
+Nombres esperados:
+  coco-hero.webp              — Hero Coco (fullscreen, vertical, alta calidad)
+  coco-bio.webp               — Foto bio (retrato 3:4, blanco y negro)
+  disciplina-contemporanea.webp
+  disciplina-teatro.webp
+  disciplina-heels.webp
+  show-nocturna.webp
+  show-fuego.webp
+  show-diamante.webp
+  show-eclipse.webp
+
+Formato recomendado: .webp (compresión ~80%), máx 1080px de ancho.
+Videos: .mp4 H.264, resolución 720p, sin audio o audio atenuado.
