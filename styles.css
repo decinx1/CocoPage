@@ -796,14 +796,56 @@ a { text-decoration: none; color: inherit; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--dur-slow) var(--ease-out);
+  z-index: 1;
+  filter: grayscale(100%) brightness(0.75);          /* estado inicial: foto apagada */
+  transition: transform var(--dur-slow) var(--ease-out),
+              filter 0.8s var(--ease-out);            /* transición suave al revelar */
 }
-.bento-card:hover .bento-card__img { transform: scale(1.1); }
+
+/* Al 20 % de visibilidad el observer añade is-visible → se revela el color */
+.bento-card.is-visible .bento-card__img {
+  filter: grayscale(0%) brightness(1);
+}
+
+.bento-card:hover .bento-card__img {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);               /* hover también muestra color */
+}
+
+/* ── MYSTICAL — posicionamiento independiente (ajustado por cliente) ── */
+.bento-card--mystical .bento-card__img {
+  object-position: top;
+  top: -100px;
+  bottom: auto;
+  height: calc(100% + 100px);
+}
+
+/* ── ECLIPSE — posicionamiento independiente ── */
+/* CocoVIs.jpeg: sujeto aparece bajo → levantar para centrar en el sujeto */
+.bento-card--eclipse .bento-card__img {
+  object-position: top;
+  top: -180px;
+  bottom: auto;
+  height: calc(100% + 180px);
+}
+
+/* ── FUEGO — posicionamiento independiente ── */
+/* CocoHacha2.jpeg: se ve perfecta → no se toca, hereda el cover centrado */
+.bento-card--fuego .bento-card__img {
+  object-position: center;     /* mantiene el encuadre actual que ya funciona */
+}
+
+/* ── DIAMANTE — posicionamiento independiente ── */
+/* CocoHacha.jpeg: bajar el encuadre para mostrar la parte inferior */
+.bento-card--diamante .bento-card__img {
+  object-position: 70% 20%;   /* ajusta: 0%=arriba · 50%=centro · 100%=abajo */
+}
 
 .bento-card__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+  z-index: 2;
 }
 
 .bento-card__info {
@@ -812,6 +854,7 @@ a { text-decoration: none; color: inherit; }
   left: 0;
   right: 0;
   padding: 1.25rem;
+  z-index: 3;
 }
 
 .bento-card__name {
@@ -859,6 +902,7 @@ a { text-decoration: none; color: inherit; }
 
 .bento-card__spin {
   position: absolute;
+  z-index: 4;
   top: 0.75rem;
   right: 0.75rem;
   width: 2.5rem;
