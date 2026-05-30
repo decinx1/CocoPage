@@ -1,4 +1,4 @@
----
+
 
 # COCO — Portafolio Artístico
 
@@ -18,6 +18,6 @@ Portafolio web personal mobile-first para Coco, artista escénico con identidad 
 - Conversión de .jpeg a .webp en todos los assets para optimizar carga
 - Fotos de galería drag actualizadas si se cambian las imágenes bento
 
----
+
 
 Diseño y desarrollo: portafolio mobile-first optimizado para iPhone 15 / viewport vertical.
