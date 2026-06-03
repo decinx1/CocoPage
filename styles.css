@@ -594,6 +594,7 @@ a { text-decoration: none; color: inherit; }
   background: var(--heart-bg);
   padding: var(--space-2xl) var(--space-md);
   overflow: hidden;
+  overflow-x: clip; /* recorta elementos rotados que escapan en iOS/Safari */
 }
 
 .about-heart__bg-emoji { pointer-events: none; }
@@ -713,6 +714,7 @@ a { text-decoration: none; color: inherit; }
   background: var(--heart-bg);
   padding: var(--space-2xl) var(--space-md);
   overflow: hidden;
+  overflow-x: clip; /* recorta tarjetas bento rotadas en iOS/Safari */
 }
 
 .gallery-heart__glow {
