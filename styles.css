@@ -831,7 +831,7 @@ a { text-decoration: none; color: inherit; }
 /* CocoVIs.jpeg: sujeto aparece bajo → levantar para centrar en el sujeto */
 .bento-card--eclipse .bento-card__img {
   object-position: top;
-  top: -140px;
+  top: -100px;
   bottom: auto;
   height: calc(100% + 150px);
 }
