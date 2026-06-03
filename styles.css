@@ -261,7 +261,9 @@ a { text-decoration: none; color: inherit; }
   filter: grayscale(100%);
   transition: filter var(--dur-slow) var(--ease-out);
 }
-.bio-coco__image:hover { filter: grayscale(0%); }
+/* Revela color al hacer scroll (20% visible) */
+.bio-coco__image-wrap.is-visible .bio-coco__image { filter: grayscale(0%); }
+.bio-coco__image:hover                            { filter: grayscale(0%); }
 
 .bio-coco__text {
   display: flex;
@@ -344,6 +346,11 @@ a { text-decoration: none; color: inherit; }
   filter: grayscale(100%);
   transition: filter var(--dur-slow) var(--ease-out),
               transform var(--dur-slow) var(--ease-out);
+}
+
+/* Revela color al hacer scroll (20% visible) */
+.work-card.is-visible .work-card__img {
+  filter: grayscale(0%);
 }
 
 .work-card:hover .work-card__img {
@@ -815,7 +822,7 @@ a { text-decoration: none; color: inherit; }
 /* ── MYSTICAL — posicionamiento independiente (ajustado por cliente) ── */
 .bento-card--mystical .bento-card__img {
   object-position: top;
-  top: -100px;
+  top: -90px;
   bottom: auto;
   height: calc(100% + 100px);
 }
@@ -824,9 +831,9 @@ a { text-decoration: none; color: inherit; }
 /* CocoVIs.jpeg: sujeto aparece bajo → levantar para centrar en el sujeto */
 .bento-card--eclipse .bento-card__img {
   object-position: top;
-  top: -180px;
+  top: -140px;
   bottom: auto;
-  height: calc(100% + 180px);
+  height: calc(100% + 150px);
 }
 
 /* ── FUEGO — posicionamiento independiente ── */
@@ -898,24 +905,6 @@ a { text-decoration: none; color: inherit; }
   width: 14px;
   height: 14px;
   flex-shrink: 0;
-}
-
-.bento-card__spin {
-  position: absolute;
-  z-index: 4;
-  top: 0.75rem;
-  right: 0.75rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: var(--color-red);
-  border-radius: 50%;
-  border: 2px solid var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-size: 1rem;
-  animation: spin 20s linear infinite;
 }
 
 /* ═══════════════════════════════════════

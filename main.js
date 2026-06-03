@@ -14,7 +14,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 }   // dispara cuando el 20 % del elemento es visible
+  { threshold: 0.4 }   // dispara cuando el 40 % del elemento es visible
 );
 
 // Observa elementos de reveal normales Y bento cards (tienen clase reveal-heart)
